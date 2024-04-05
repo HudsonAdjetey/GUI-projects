@@ -18,7 +18,9 @@ text_container.pack()
 entry = ttk.Entry(master=window)
 entry.pack(pady=5 )
 
-button = ttk.Button(master=window, text="Add Caution", command=btn_func)
+# wanting to call the fn directly specially when the func receives some params
+button = ttk.Button(master=window, text="Add Caution", command=lambda : btn_func())
+# button = ttk.Button(master=window, text="Add Caution", command=btn_func)
 button.pack()
 
 # run

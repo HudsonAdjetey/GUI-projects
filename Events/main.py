@@ -15,7 +15,7 @@ btn = ttk.Button(master=window, text="Dum Button")
 btn.pack()
 
 # events
-# window.bind("<Alt-a>", lambda event: print("An event"))
-window.bind("<Alt-KeyPress-a>", lambda e: print("An Event"))
+window.bind("<Alt-a>", lambda event: print("An event"))
+window.bind("<Alt-KeyPress-a>", lambda e: print(e))
 
 window.mainloop()

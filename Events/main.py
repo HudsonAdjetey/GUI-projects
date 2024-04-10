@@ -19,8 +19,14 @@ entry.pack()
 btn = ttk.Button(master=window, text="Dum Button")
 btn.pack()
 
+text_label = ttk.Label(master=window, text= "text to be selected")
+text_label.pack()
 # events
 # window.bind("<Alt-a>", lambda event: print("An event"))
-window.bind("<Alt-KeyPress-a>", lambda e: print(e))
-window.bind('<Motion>', get_pos)
+# window.bind("<Alt-KeyPress-a>", lambda e: print(e))
+# btn.bind('<Motion>', get_pos)
+# window.bind("<KeyPress>", lambda e: print(e))
+
+text.bind("<Shift-MouseWheel>", lambda e: print(e.state))
+
 window.mainloop()

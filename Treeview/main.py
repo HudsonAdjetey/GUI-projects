@@ -24,7 +24,22 @@ for i in range(100):
     first_name = choice(first_names)
     last_name = choice(last_names)
     email = f"{str(first_name).lower()}{str(last_name).lower()}@example.com"
+    data = (first_name, last_name, email)
     tree_view.insert("", index=i, values=(first_name, last_name, email))
+
+# events
+def item_select(_):
+
+    for item in tree_view.selection():
+        selected_item = tree_view.item(item)
+
+tree_view.bind("<<TreeviewSelect>>", item_select)
+def delete_items(_):
+    selected_item = tree_view.selection()
+    for item in selected_item:
+        tree_view.delete(item)
+tree_view.bind("<Delete>", delete_items)
+
 
 tree_view.pack(expand=True, fill="both")
 window.mainloop()

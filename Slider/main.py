@@ -31,7 +31,7 @@ scrolled_text = scrolledtext.ScrolledText(master=window, height=5)
 scrolled_text.pack()
 
 aut_var = tk.IntVar()
-auto_start = ttk.Progressbar(window, length=300, variable=aut_var, maximum=30)
+auto_start = ttk.Progressbar(window, length=300, variable=aut_var, maximum=30, orient="vertical")
 auto_start.pack()
 
 aut_slider = ttk.Scale(window, from_=0, to=30, length=300, variable=aut_var, command= lambda e: auto_start.stop())
